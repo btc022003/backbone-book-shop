@@ -5,7 +5,7 @@ window.template = require('./lib/template')
 var Nav = require('./js/views/nav_view')//导航视图
 var BookTypeView = require('./js/views/type_view')//分类视图
 var BookListView = require('./js/views/list_view')//书籍列表书籍
-
+var ResumeView = require('./js/views/resume_view')//个人简历页面
 var nav = new Nav() //导航视图展示
 $('#nav').html(nav.render().$el)
 
@@ -16,7 +16,9 @@ var Router = Backbone.Router.extend({
     routes:{
         '':'homePage',
         'books':'booksType',
-        'list/:type':'listPage'
+        'list/:type':'listPage',
+        'blog':'resumePage',
+        'about_me':'mePage'
     },
     booksType:function(){
         $('#app').html(bookType.render().$el)
@@ -28,6 +30,13 @@ var Router = Backbone.Router.extend({
         // $('#app').html('listPage')
         var list = new BookListView(type)
         $('#app').html(list.render().$el)
+    },
+    resumePage:function(){
+        var resume = new ResumeView()
+        $('#app').html(resume.render().$el)
+    },
+    mePage:function(){
+        $('#app').html('<h1>关于我</h1>')
     }
 })
 var router = new Router()
