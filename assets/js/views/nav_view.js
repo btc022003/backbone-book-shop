@@ -1,5 +1,5 @@
 var tpl = require('../../tpl/nav.html')
-console.log(tpl)
+// console.log(tpl)
 module.exports = Backbone.View.extend({
     template:template.compile(tpl),
     initialize:function(){
