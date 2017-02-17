@@ -10,6 +10,7 @@ module.exports = Backbone.View.extend({
         this.type = type
         this.books = new Collection()
         this.listenTo(this.books,'add',this.dataChangedHandle)//监听集合的add事件,在fetch之后触发
+        this.books.getPageSize({type:this.type})
         this.books.fetch({data:{type:this.type,page:this.pageIndex},remove:false})
     },
     template:template.compile(tpl),

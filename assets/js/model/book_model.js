@@ -6,6 +6,11 @@ var BookModel = Backbone.Model.extend({
 //创建书籍集合
 var BookCollection = Backbone.Collection.extend({
     model:BookModel,
-    url:'http://localhost:3000/api/v1/books/'
+    url:'http://localhost:3000/api/v1/books/',
+    getPageSize:function(params){
+        $.getJSON(this.url+'get_page_count',params,function(res){
+            console.log(res)
+        })
+    }
 })
 module.exports = {Model:BookModel,Collection:BookCollection}
