@@ -3,7 +3,7 @@ var tpl = require('../../tpl/nav.html')
 module.exports = Backbone.View.extend({
     template:template.compile(tpl),
     initialize:function(){
-        this.selectedIndex = 0
+        this.selectedIndex = 0 //设置当前选中的索引值
     },
     events:{
         'click a.weui-tabbar__item':'linkChanged'

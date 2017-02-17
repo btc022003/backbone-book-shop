@@ -7,9 +7,10 @@ var BookModel = Backbone.Model.extend({
 var BookCollection = Backbone.Collection.extend({
     model:BookModel,
     url:'http://localhost:3000/api/v1/books/',
-    getPageSize:function(params){
+    getPageSize:function(params,callback){
         $.getJSON(this.url+'get_page_count',params,function(res){
-            console.log(res)
+            // console.log(res)
+            callback(res) //获取分页页数
         })
     }
 })

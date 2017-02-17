@@ -1,7 +1,7 @@
-window.$ = require('jquery')
-window._ = require('underscore')
-window.Backbone = require('backbone')
-window.template = require('./lib/template')
+window.$ = require('jquery')//jquery
+window._ = require('underscore')//underscore
+window.Backbone = require('backbone')//backcone
+window.template = require('./lib/template')//art-template模块
 var Nav = require('./js/views/nav_view')//导航视图
 var BookTypeView = require('./js/views/type_view')//分类视图
 var BookListView = require('./js/views/list_view')//书籍列表书籍
